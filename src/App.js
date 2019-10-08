@@ -86,7 +86,7 @@ const App = () => {
       <Container style={{ textAlign: "center" }} >
         <Typography style={{ padding: 20 }} variant="overline" display="block" gutterBottom>
           Made By Rief and <img style={{ borderRadius: "50%", height: "15px"}} src={ReactLogo} alt="react"></img><br></br>
-          <small><a href="http://www.freepik.com">Logo Designed By gstudioimagen / Freepik</a></small>
+          <small><a style={{ color: "grey", textDecoration: "none"}} href="http://www.freepik.com">Logo Designed By gstudioimagen / Freepik</a></small>
         </Typography>
       </Container>
     </div>
