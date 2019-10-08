@@ -54,7 +54,7 @@ export default function Recipe(props) {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            {props.sourceRecipe[0]}
+            {props.sourceRecipe[0].toUpperCase()}
           </Avatar>
         }
         action={

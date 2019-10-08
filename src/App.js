@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { Container, Input, Button, Grid } from "@material-ui/core";
+import { Container, Input, Button, Grid, Typography } from "@material-ui/core";
 import Recipe from "./components/Recipe";
+import ReactLogo from './images/react.ico';
+import RecipeIcon from './images/newico.jpg'
 
 const App = () => {
   
@@ -36,8 +38,11 @@ const App = () => {
 
   return (
     <div>
+      <div style={{ textAlign: "center" }}>
+        <img style={{ padding: 10, borderRadius: "20px" }} width="120px" src={RecipeIcon} alt="imageLogo" />
+      </div>
       <form onSubmit={updateQuery}>
-        <Container style={{ textAlign: "center", margin: "20px 0px" }}>
+        <Container style={{ textAlign: "center", margin: "20px auto" }}>
           <Input
             style={{ padding: 4 }}
             placeholder="Search Recipes"
@@ -65,7 +70,7 @@ const App = () => {
             spacing={3}
             >
             {recipes.map(recipe => (
-              <Grid item xs={3} key={recipe.recipe.label}>
+              <Grid item xs={12} sm={6} md={3} key={recipe.recipe.label}>
                   <Recipe key={recipe.recipe.label}
                     title={recipe.recipe.label}
                     calories={recipe.recipe.calories}
@@ -77,6 +82,12 @@ const App = () => {
               </Grid>
             ))}
           </Grid>
+      </Container>
+      <Container style={{ textAlign: "center" }} >
+        <Typography style={{ padding: 20 }} variant="overline" display="block" gutterBottom>
+          Made By Rief and <img style={{ borderRadius: "50%", height: "15px"}} src={ReactLogo} alt="react"></img><br></br>
+          <small><a href="http://www.freepik.com">Logo Designed By gstudioimagen / Freepik</a></small>
+        </Typography>
       </Container>
     </div>
   );
